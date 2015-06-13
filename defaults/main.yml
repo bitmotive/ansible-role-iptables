@@ -1,0 +1,29 @@
+---
+# defaults file for iptables role
+
+# Default chain policies for IPv4/6
+role_iptables_policy_ip4_input_default: 'DROP'
+role_iptables_policy_ip4_output_default: 'DROP'
+role_iptables_policy_ip4_forward_default: 'DROP'
+role_iptables_policy_ip6_input_default: 'DROP'
+role_iptables_policy_ip6_output_default: 'DROP'
+role_iptables_policy_ip6_forward_default: 'DROP'
+
+# Variables that may be referenced by IPTables Rules
+role_iptables_iptables4_path: '/sbin/iptables'
+role_iptables_iptables6_path: '/sbin/ip6tables'
+role_iptables_modprobe_path: '/sbin/modprobe'
+role_iptables_int_intf: 'eth0'
+role_iptables_ext_intf: 'eth1'
+
+# Modprobe includes (if any)
+role_iptables_modprobe_modules: []
+
+# Individual rules for each chain. Customize per host/group.
+role_iptables_input_chain: []
+role_iptables_output_chain: []
+role_iptables_forward_chain: []
+
+# Generic flexibility
+role_iptables_header_rules: []
+role_iptables_footer_rules: []

@@ -1,0 +1,22 @@
+---
+# tasks file for iptables role
+
+- name: Copy iptables configuration script
+  template: >
+    src=root/iptables.sh.j2 
+    dest=/root/iptables.sh 
+    owner=root
+    group=root
+    mode=0600
+  tags: 
+    - iptables
+
+- name: Load firewall rules
+  command: bash /root/iptables.sh
+  tags: 
+    - iptables
+
+- name: Save iptables configuration
+  command: /etc/init.d/iptables save
+  tags:
+    - iptables
