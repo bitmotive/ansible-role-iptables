@@ -10,7 +10,7 @@ MODPROBE={{ role_iptables_modprobe_path }} #/sbin/modprobe
 ### internal/external interfaces.
 INT_INTF={{ role_iptables_internal_interface }} # eth0
 EXT_INTF={{ role_iptables_external_interface }} #eth1
-INT_NET={{ int_network }}
+INT_NET={{ role_iptables_int_network }}
 
 echo "[+] Flushing existing iptables rules..."
 $IPTABLES -F # Flush all rules
